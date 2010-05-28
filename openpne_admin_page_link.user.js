@@ -26,15 +26,7 @@ var GM_infoPanel = document.createElement('div');
     }
 })();
 
-//OpenPNEのページか確認
-    var opsite =document.getElementsByTagName('body')[0].id.match(/page_member_login/);
-
-    if (opsite == "page_member_login")
-    {
-    //OpenPNEのベースURL取得？
-        var base = location.hostname;
-
-        //URL生成部
-        GM_infoPanel.innerHTML = '<a href="http://'+base+'/pc_backend.php/" target="_blank">管理画面へ</a>';
-        document.body.appendChild(GM_infoPanel);
-    }
+if (document.getElementsByTagName('body')[0].id.match(/page_member_login/)) {
+    GM_infoPanel.innerHTML = '<a href="http://'+location.hostname+'/pc_backend.php/">管理画面へ</a>';
+    document.body.appendChild(GM_infoPanel);
+}
